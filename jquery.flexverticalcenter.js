@@ -16,7 +16,7 @@
 			var $this		= $(this);              // store the object
 			var attribute	= onAttribute || 'margin-top'; // the attribute to put the calculated value on
         	
-			// resize to box the maintain the set ratio
+			// recalculate the distance to the top of the element to keep it centered
 			var resizer = function () {
 				// get parent height minus own height and devide by 2
 				$this.css(
