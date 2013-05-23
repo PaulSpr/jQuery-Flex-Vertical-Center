@@ -29,6 +29,9 @@
 				
 			// Call on resize. Opera debounces their resize by default. 
       		$(window).resize(resizer);
+      		
+      		// Apply a load event to images within the element so it fires again after an image is loaded
+      		$this.find('img').load(resizer);
       	
 		});
 
