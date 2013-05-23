@@ -1,0 +1,61 @@
+<!doctype html>  
+
+<html lang="nl">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<!-- 
+	This website was carefully constructed by
+	Interactive Studios
+	http://www.interactivestudios.nl
+	-->
+	
+	<title>FlexVerticalCenter test</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	
+	<style type="text/css">
+		/* make sure we have a very flexible container */
+		body{
+			margin: 0;
+			height: 100%;
+		}
+		html{
+			height: 100%;
+		}
+		
+		.the-item{
+			width: 20%;
+			background: #eee;
+			margin: 0 auto;
+		}
+		img{
+			max-width: 100%;
+		}
+	</style>
+	
+</head>
+
+
+<body>
+
+	<div class="the-item">
+		<p>
+			This box is 20% wide and is always vertically centered within it's parent, even if the view port changes (resize your window to see the result).
+		</p>
+	</div>
+		
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="jquery.flexverticalcenter.js"></script>
+
+	<script>
+		$('.the-item').flexVerticalCenter();
+	</script>
+
+  
+</body>
+
+</html>
