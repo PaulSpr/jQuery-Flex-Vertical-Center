@@ -25,7 +25,13 @@ This will take the parents height, the elements own height and calculate the dis
 Options
 -------
 
-You can pass one parameter to the plugin, which is the css attribute that the value should be set on. The default is 'margin-top', but you can pass any attribute you would like. Most probably 'padding-top' or 'top'.
+There are 3 parameters you may pass to the plugin, all of which are optional.
+
+- onAttribute - the css attribute that the value should be set on (default: 'margin-top')
+- verticalOffset - the number of pixels to offset the vertical alignment by, ie. 10, "50px", -100 (default: 0)
+- parentSelector - a selector representing the parent to vertically center this element within, ie. ".container" (default: the element's immediate parent)
+
+<!-- comment so codeblock displays properly (codeblocks do not display immediately following lists in markdown syntax) -->
 
 	<script>
 	$(document).ready(function() {
