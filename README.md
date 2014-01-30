@@ -34,6 +34,12 @@ You can pass one parameter to the plugin, which is the css attribute that the va
 	</script>
 
 
+Non-jQuery version
+------------------
+
+Matthew Nessworthy has made a vanilla javascript version of this plugin. Great if you don't need or want to use jQuery: https://github.com/devmatt/js-flex-vertical-align
+
+
 Note
 ----
 
