@@ -3,6 +3,8 @@
 * FlexVerticalCenter.js 1.0
 *
 * Copyright 2011, Paul Sprangers http://paulsprangers.com
+* Modifications:
+*  (29/06/2013) added parentSelector and verticalOffset options (Graham Swan http://grahamswan.com)
 * Released under the WTFPL license 
 * http://sam.zoy.org/wtfpl/
 *
@@ -10,17 +12,20 @@
 */
 (function( $ ){
 	
-	$.fn.flexVerticalCenter = function( onAttribute ) {
+	$.fn.flexVerticalCenter = function( onAttribute, verticalOffset, parentSelector ) {
 	
 		return this.each(function(){
 			var $this		= $(this);              // store the object
 			var attribute	= onAttribute || 'margin-top'; // the attribute to put the calculated value on
+			var offset = parseInt(verticalOffset) || 0; // the number of pixels to offset the vertical alignment by
+			var parent_selector = parentSelector || null; // a selector representing the parent to vertically center this element within
         	
 			// recalculate the distance to the top of the element to keep it centered
 			var resizer = function () {
-				// get parent height minus own height and devide by 2
+				var parent_height = (parent_selector) ? $this.parents(parent_selector).first().height() : $this.parent().height();
+				
 				$this.css(
-					attribute, ( ( $this.parent().height() - $this.height() ) / 2 )
+					attribute, ( ( ( parent_height - $this.height() ) / 2 ) + offset )
 				);
 			};
 
