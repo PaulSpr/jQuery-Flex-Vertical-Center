@@ -10,11 +10,11 @@
 */
 (function( $ ){
 
-	$.fn.flexVerticalCenter = function( onAttribute, options ) {
-	  var attribute	= onAttribute || 'margin-top'; // the attribute to put the calculated value on
+	$.fn.flexVerticalCenter = function( options ) {
 	  var settings = $.extend({
-	    verticalOffset: 0,   // the number of pixels to offset the vertical alignment by
-      parentSelector: null // a selector representing the parent to vertically center this element within
+	    cssAttribute:   'margin-top', // the attribute to apply the calculated value to
+	    verticalOffset: 0,            // the number of pixels to offset the vertical alignment by
+      parentSelector: null          // a selector representing the parent to vertically center this element within
     }, options || {});
 
 		return this.each(function(){
@@ -25,7 +25,7 @@
 				var parentHeight = (settings.parentSelector) ? $this.parents(settings.parentSelector).first().height() : $this.parent().height();
 
 				$this.css(
-					attribute, ( ( ( parentHeight - $this.height() ) / 2 ) + parseInt(settings.verticalOffset) )
+					settings.cssAttribute, ( ( ( parentHeight - $this.height() ) / 2 ) + parseInt(settings.verticalOffset) )
 				);
 			};
 

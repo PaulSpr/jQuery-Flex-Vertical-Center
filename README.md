@@ -25,19 +25,19 @@ This will take the parents height, the elements own height and calculate the dis
 Options
 -------
 
-You can pass 1 parameter and an options hash to the plugin.
+You can pass an options hash to the plugin.
 
  - `onAttribute` - the css attribute that the value should be set on (default: 'margin-top')
  - `verticalOffset` - the number of pixels to offset the vertical alignment by, ie. 10, "50px", -100 (default: 0)
- - `parentSelector` - a selector representing the parent to vertically center this element within, ie. ".container" (default: the element's immediate parent)
+ - `parentSelector` - a selector representing the parent to vertically center this element within, ie. ".parent" (default: the element's immediate parent)
 
 Examples:
 
 	<script>
 	$(document).ready(function() {
-		$('#element-to-be-centered').flexVerticalCenter('padding-top');
-		$('#element-to-be-centered').flexVerticalCenter('margin-top', { verticalOffset: 50 });
-		$('#element-to-be-centered').flexVerticalCenter('padding-top', { verticalOffset: 50, parentSelector: '.parent' });
+		$('#element-to-be-centered').flexVerticalCenter();
+		$('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', verticalOffset: '50px' });
+		$('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', parentSelector: '.parent' });
 	});
 	</script>
 

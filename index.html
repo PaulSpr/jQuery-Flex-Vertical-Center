@@ -62,9 +62,9 @@
 	<script src="jquery.flexverticalcenter.js"></script>
 
 	<script>
-		$('.first-item').flexVerticalCenter('padding-top');
-		$('.second-item').flexVerticalCenter('padding-top', { verticalOffset: '50px' });
-		$('.third-item').flexVerticalCenter('padding-top', { parentSelector: '.parent' });
+		$('.first-item').flexVerticalCenter({ cssAttribute: 'padding-top' });
+		$('.second-item').flexVerticalCenter({ cssAttribute: 'padding-top', verticalOffset: '50px' });
+		$('.third-item').flexVerticalCenter({ cssAttribute: 'padding-top', parentSelector: '.parent' });
 	</script>
 </body>
 
