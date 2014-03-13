@@ -13,11 +13,11 @@ Simply include this file in your project (after loading jQuery) like this:
 
 Then call the plugin on the element which needs to be vertically centered in it's parent.
 
-	<script>
-	$(document).ready(function() {
-		$('#element-to-be-centered').flexVerticalCenter();
-	});
-	</script>
+  <script>
+  $(document).ready(function() {
+    $('#element-to-be-centered').flexVerticalCenter();
+  });
+  </script>
 
 This will take the parents height, the elements own height and calculate the distance the element should have from the parents top to be vertically centered. This value is applied to the top margin of the element by default.
 
@@ -25,13 +25,21 @@ This will take the parents height, the elements own height and calculate the dis
 Options
 -------
 
-You can pass one parameter to the plugin, which is the css attribute that the value should be set on. The default is 'margin-top', but you can pass any attribute you would like. Most probably 'padding-top' or 'top'.
+You can pass an options hash to the plugin.
 
-	<script>
-	$(document).ready(function() {
-		$('#element-to-be-centered').flexVerticalCenter('padding-top');
-	});
-	</script>
+ - `onAttribute` - the css attribute that the value should be set on (default: 'margin-top')
+ - `verticalOffset` - the number of pixels to offset the vertical alignment by, ie. 10, "50px", -100 (default: 0)
+ - `parentSelector` - a selector representing the parent to vertically center this element within, ie. ".parent" (default: the element's immediate parent)
+
+Examples:
+
+  <script>
+  $(document).ready(function() {
+    $('#element-to-be-centered').flexVerticalCenter();
+    $('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', verticalOffset: '50px' });
+    $('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', parentSelector: '.parent' });
+  });
+  </script>
 
 
 Non-jQuery version
