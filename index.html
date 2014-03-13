@@ -3,69 +3,69 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-	<!--
-	This website was carefully constructed by
-	Interactive Studios
-	http://www.interactivestudios.nl
-	-->
+  <!--
+  This website was carefully constructed by
+  Interactive Studios
+  http://www.interactivestudios.nl
+  -->
 
-	<title>FlexVerticalCenter test</title>
+  <title>FlexVerticalCenter test</title>
 
-	<style>
-		body{
-			margin: 0;
-		}
-		.box {
-			background: #333;
-			height: 300px;
-			margin-bottom: 30px;
-		}
-		.box2 {
-		  background: #ccc;
-		  height: 100px;
-		}
-		p {
-		  width: 20%;
-			margin: 0 auto;
-			color: #fff;
-			font-weight: bold;
-	  }
-	</style>
+  <style>
+    body{
+      margin: 0;
+    }
+    .box {
+      background: #333;
+      height: 300px;
+      margin-bottom: 30px;
+    }
+    .box2 {
+      background: #ccc;
+      height: 100px;
+    }
+    p {
+      width: 20%;
+      margin: 0 auto;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
-	<div class="box">
-		<p class="first-item">
-			This box is 20% wide and is always vertically centered within its parent, even if the view port changes (resize your window to see the result).
-		</p>
-	</div>
+  <div class="box">
+    <p class="first-item">
+      This box is 20% wide and is always vertically centered within its parent, even if the view port changes (resize your window to see the result).
+    </p>
+  </div>
 
-	<div class="box">
-		<p class="second-item">
-			This box is 20% wide and is always vertically centered within its parent with a -50px offset, even if the view port changes (resize your window to see the result).
-		</p>
-	</div>
+  <div class="box">
+    <p class="second-item">
+      This box is 20% wide and is always vertically centered within its parent with a -50px offset, even if the view port changes (resize your window to see the result).
+    </p>
+  </div>
 
-	<div class="box parent">
-	  <div class="box2">
-  		<p class="third-item">
-  			This box is 20% wide and is always vertically centered within the specified dark grey parent, even if the view port changes (resize your window to see the result).
-  		</p>
-  	</div>
-	</div>
+  <div class="box parent">
+    <div class="box2">
+      <p class="third-item">
+        This box is 20% wide and is always vertically centered within the specified dark grey parent, even if the view port changes (resize your window to see the result).
+      </p>
+    </div>
+  </div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="jquery.flexverticalcenter.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="jquery.flexverticalcenter.js"></script>
 
-	<script>
-		$('.first-item').flexVerticalCenter({ cssAttribute: 'padding-top' });
-		$('.second-item').flexVerticalCenter({ cssAttribute: 'padding-top', verticalOffset: '50px' });
-		$('.third-item').flexVerticalCenter({ cssAttribute: 'padding-top', parentSelector: '.parent' });
-	</script>
+  <script>
+    $('.first-item').flexVerticalCenter({ cssAttribute: 'padding-top' });
+    $('.second-item').flexVerticalCenter({ cssAttribute: 'padding-top', verticalOffset: '50px' });
+    $('.third-item').flexVerticalCenter({ cssAttribute: 'padding-top', parentSelector: '.parent' });
+  </script>
 </body>
 
 </html>

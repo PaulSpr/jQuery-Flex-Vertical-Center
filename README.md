@@ -13,11 +13,11 @@ Simply include this file in your project (after loading jQuery) like this:
 
 Then call the plugin on the element which needs to be vertically centered in it's parent.
 
-	<script>
-	$(document).ready(function() {
-		$('#element-to-be-centered').flexVerticalCenter();
-	});
-	</script>
+  <script>
+  $(document).ready(function() {
+    $('#element-to-be-centered').flexVerticalCenter();
+  });
+  </script>
 
 This will take the parents height, the elements own height and calculate the distance the element should have from the parents top to be vertically centered. This value is applied to the top margin of the element by default.
 
@@ -33,13 +33,13 @@ You can pass an options hash to the plugin.
 
 Examples:
 
-	<script>
-	$(document).ready(function() {
-		$('#element-to-be-centered').flexVerticalCenter();
-		$('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', verticalOffset: '50px' });
-		$('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', parentSelector: '.parent' });
-	});
-	</script>
+  <script>
+  $(document).ready(function() {
+    $('#element-to-be-centered').flexVerticalCenter();
+    $('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', verticalOffset: '50px' });
+    $('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', parentSelector: '.parent' });
+  });
+  </script>
 
 
 Non-jQuery version
