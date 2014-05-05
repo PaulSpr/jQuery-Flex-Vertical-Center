@@ -14,14 +14,17 @@
     var settings = $.extend({
       cssAttribute:   'margin-top', // the attribute to apply the calculated value to
       verticalOffset: 0,            // the number of pixels to offset the vertical alignment by
-      parentSelector: null          // a selector representing the parent to vertically center this element within
+      parentSelector: null,         // a selector representing the parent to vertically center this element within
+      debounceTimeout: 25           // a default debounce timeout in milliseconds
     }, options || {});
+    var debounce;
 
     return this.each(function(){
       var $this   = $(this); // store the object
 
       // recalculate the distance to the top of the element to keep it centered
       var resizer = function () {
+
         var parentHeight = (settings.parentSelector) ? $this.parents(settings.parentSelector).first().height() : $this.parent().height();
 
         $this.css(
@@ -33,7 +36,10 @@
       resizer();
 
       // Call on resize. Opera debounces their resize by default.
-      $(window).resize(resizer);
+      $(window).resize(function () {
+          clearTimeout(debounce);
+          debounce = setTimeout(resizer, settings.debounceTimeout);
+      });
 
       // Apply a load event to images within the element so it fires again after an image is loaded
       $this.find('img').load(resizer);
