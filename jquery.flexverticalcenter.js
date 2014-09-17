@@ -25,7 +25,8 @@
       // recalculate the distance to the top of the element to keep it centered
       var resizer = function () {
 
-        var parentHeight = (settings.parentSelector) ? $this.parents(settings.parentSelector).first().height() : $this.parent().height();
+        var parentHeight = (settings.parentSelector && $this.parents(settings.parentSelector).length) ?
+          $this.parents(settings.parentSelector).first().height() : $this.parent().height();
 
         $this.css(
           settings.cssAttribute, ( ( ( parentHeight - $this.height() ) / 2 ) + parseInt(settings.verticalOffset) )
