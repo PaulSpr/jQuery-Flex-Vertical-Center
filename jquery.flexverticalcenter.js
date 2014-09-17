@@ -17,10 +17,10 @@
       parentSelector: null,         // a selector representing the parent to vertically center this element within
       debounceTimeout: 25           // a default debounce timeout in milliseconds
     }, options || {});
-    var debounce;
 
     return this.each(function(){
       var $this   = $(this); // store the object
+      var debounce;
 
       // recalculate the distance to the top of the element to keep it centered
       var resizer = function () {
