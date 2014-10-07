@@ -33,13 +33,15 @@
         );
       };
 
-      // Call once to set.
-      resizer();
-
       // Call on resize. Opera debounces their resize by default.
       $(window).resize(function () {
           clearTimeout(debounce);
           debounce = setTimeout(resizer, settings.debounceTimeout);
+      });
+
+      // Call once to set after window loads.
+      $(window).load(function () {
+          resizer();
       });
 
       // Apply a load event to images within the element so it fires again after an image is loaded
