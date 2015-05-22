@@ -9,15 +9,17 @@ Usage
 
 Simply include this file in your project (after loading jQuery) like this:
 
-<script defer src="js/jquery.flexverticalcenter.js"></script>
+```<script defer src="js/jquery.flexverticalcenter.js"></script>```
 
 Then call the plugin on the element which needs to be vertically centered in it's parent.
 
+```
   <script>
   $(document).ready(function() {
     $('#element-to-be-centered').flexVerticalCenter();
   });
   </script>
+```
 
 This will take the parents height, the elements own height and calculate the distance the element should have from the parents top to be vertically centered. This value is applied to the top margin of the element by default.
 
@@ -30,9 +32,12 @@ You can pass an options hash to the plugin.
  - `onAttribute` - the css attribute that the value should be set on (default: 'margin-top')
  - `verticalOffset` - the number of pixels to offset the vertical alignment by, ie. 10, "50px", -100 (default: 0)
  - `parentSelector` - a selector representing the parent to vertically center this element within, ie. ".parent" (default: the element's immediate parent)
+ - `debounceTimeout` - in milliseconds, used to rate-limit the vertical centering when resizing the browser window (default: 25)
+ - `deferTilWindowLoad` - if true, no action will be taken until jQuery's window.load event fires. If false, the vertical centering will take place immediately, and then once again on window.load (default: false)
 
 Examples:
 
+```
   <script>
   $(document).ready(function() {
     $('#element-to-be-centered').flexVerticalCenter();
@@ -40,7 +45,7 @@ Examples:
     $('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', parentSelector: '.parent' });
   });
   </script>
-
+```
 
 Non-jQuery version
 ------------------

@@ -15,7 +15,8 @@
       cssAttribute:   'margin-top', // the attribute to apply the calculated value to
       verticalOffset: 0,            // the number of pixels to offset the vertical alignment by
       parentSelector: null,         // a selector representing the parent to vertically center this element within
-      debounceTimeout: 25           // a default debounce timeout in milliseconds
+      debounceTimeout: 25,          // a default debounce timeout in milliseconds
+      deferTilWindowLoad: false     // if true, nothing will take effect until the $(window).load event
     }, options || {});
 
     return this.each(function(){
@@ -39,13 +40,15 @@
           debounce = setTimeout(resizer, settings.debounceTimeout);
       });
 
-      // Call once to set after window loads.
+      if (!settings.deferTilWindowLoad) {
+        // call it once, immediately.
+        resizer();
+      }
+
+      // Call again to set after window (frames, images, etc) loads.
       $(window).load(function () {
           resizer();
       });
-
-      // Apply a load event to images within the element so it fires again after an image is loaded
-      $this.find('img').load(resizer);
 
     });
 
