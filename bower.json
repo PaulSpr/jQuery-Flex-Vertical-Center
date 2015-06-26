@@ -1,0 +1,22 @@
+{
+  "name": "jQuery-Flex-Vertical-Center",
+  "version": "1.0.0",
+  "homepage": "https://github.com/PaulSpr/jQuery-Flex-Vertical-Center",
+  "authors": [
+    "Paul Sprangers"
+  ],
+  "description": "easy way to vertically center an element in its parent",
+  "main": "jquery.flexverticalcenter.js",
+  "keywords": [
+    "jquery",
+    "vertically center"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
