@@ -32,6 +32,9 @@
         $this.css(
           settings.cssAttribute, ( ( ( parentHeight - $this.height() ) / 2 ) + parseInt(settings.verticalOffset) )
         );
+        if (options.complete !== undefined) {
+         options.complete();
+        }
       };
 
       // Call on resize. Opera debounces their resize by default.

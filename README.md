@@ -34,6 +34,7 @@ You can pass an options hash to the plugin.
  - `parentSelector` - a selector representing the parent to vertically center this element within, ie. ".parent" (default: the element's immediate parent)
  - `debounceTimeout` - in milliseconds, used to rate-limit the vertical centering when resizing the browser window (default: 25)
  - `deferTilWindowLoad` - if true, no action will be taken until jQuery's window.load event fires. If false, the vertical centering will take place immediately, and then once again on window.load (default: false)
+ - `complete` - takes an anonymous function that gets run after the centering is complete. 
 
 Examples:
 
@@ -43,6 +44,7 @@ Examples:
     $('#element-to-be-centered').flexVerticalCenter();
     $('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', verticalOffset: '50px' });
     $('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', parentSelector: '.parent' });
+    $('#element-to-be-centered').flexVerticalCenter({ cssAttribute: 'padding-top', parentSelector: '.parent', complete: function(){ alert('I'm in the middle.... Vertically') } });
   });
   </script>
 ```
