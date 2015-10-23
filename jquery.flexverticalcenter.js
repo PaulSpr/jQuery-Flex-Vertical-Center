@@ -32,8 +32,8 @@
         $this.css(
           settings.cssAttribute, ( ( ( parentHeight - $this.height() ) / 2 ) + parseInt(settings.verticalOffset) )
         );
-        if (options.complete !== undefined) {
-         options.complete();
+        if (settings.complete !== undefined) {
+         settings.complete();
         }
       };
 

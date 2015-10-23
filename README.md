@@ -29,7 +29,7 @@ Options
 
 You can pass an options hash to the plugin.
 
- - `onAttribute` - the css attribute that the value should be set on (default: 'margin-top')
+ - `cssAttribute` - the css attribute that the value should be set on (default: 'margin-top')
  - `verticalOffset` - the number of pixels to offset the vertical alignment by, ie. 10, "50px", -100 (default: 0)
  - `parentSelector` - a selector representing the parent to vertically center this element within, ie. ".parent" (default: the element's immediate parent)
  - `debounceTimeout` - in milliseconds, used to rate-limit the vertical centering when resizing the browser window (default: 25)
