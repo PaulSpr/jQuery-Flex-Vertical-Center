@@ -49,7 +49,7 @@
       }
 
       // Call again to set after window (frames, images, etc) loads.
-      $(window).load(function () {
+      $(window).on('load', function () {
           resizer();
       });
 
